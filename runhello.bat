@@ -1,0 +1,2 @@
+kivy hello.py
+pause
