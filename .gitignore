@@ -1,0 +1,7 @@
+buildozer
+*.pyc
+*.pyo
+*.pyd
+*.spec
+bin
+.buildozer*
