@@ -12,8 +12,8 @@ class StartScreen(Widget):
         self.layout = FloatLayout()
         self.add_widget(self.layout)
         self.startText = Label(text="Poodle Jump 2014 Edition Platinum Edition 2014",
-                               x=0,
-                               y=0,
+                               center_x=Window.width / 2,
+                               center_y=Window.height / 2,
                                font_size=32)
         self.layout.add_widget(self.startText)
 
@@ -33,10 +33,8 @@ class StartScreen(Widget):
                       size=(self.startText.width,
                             self.startText.height))
 
-        
         with self.canvas.after:
             Rectangle(pos=(Window.mouse_pos[0],
                            Window.mouse_pos[1]),
                       size=(10,
                             10))
-                      
