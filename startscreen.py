@@ -23,13 +23,15 @@ class StartScreen(Widget):
             color=(255, 0, 0, 1)
         )
         self.startText = Label(
-            text="Poodle Jump 2014 Edition Platinum Edition #2014",
+            text="Poodle Jump",
+            width=300,
+            height=75,
             center_x=Window.width / 2,
             center_y=Window.height / 2,
             font_size=32
         )
         self.startButton = Button(
-            text="Start Game",
+            text="Start",
             width=300,
             height=75,
             center_x=Window.width / 2,
