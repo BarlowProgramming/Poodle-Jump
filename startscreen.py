@@ -28,7 +28,7 @@ class StartScreen(Widget):
             height=75,
             center_x=Window.width / 2,
             center_y=Window.height / 2,
-            font_size=32
+            font_size=50
         )
         self.startButton = Button(
             text="Start",
