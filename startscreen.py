@@ -39,6 +39,7 @@ class StartScreen(Widget):
             font_size=32
         )
         self.settingsButton = Button(
+            color=(0, 0, 0),
             text="Settings",
             width=300,
             height=75,
