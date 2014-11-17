@@ -4,3 +4,4 @@
 *.pyd
 *.spec
 .idea
+*.xcf

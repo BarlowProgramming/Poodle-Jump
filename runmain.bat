@@ -1,0 +1,2 @@
+kivy main.py
+pause
