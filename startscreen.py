@@ -27,7 +27,7 @@ class StartScreen(Widget):
             width=300,
             height=75,
             center_x=Window.width / 2,
-            center_y=Window.height / 2,
+            center_y=Window.height / 2 + 100,
             font_size=50
         )
         self.startButton = Button(
@@ -35,7 +35,7 @@ class StartScreen(Widget):
             width=300,
             height=75,
             center_x=Window.width / 2,
-            center_y=Window.height / 2 - 100,
+            center_y=Window.height / 2,
             font_size=32
         )
         self.settingsButton = Button(
@@ -43,7 +43,7 @@ class StartScreen(Widget):
             width=300,
             height=75,
             center_x=Window.width / 2,
-            center_y=Window.height / 2 - 200,
+            center_y=Window.height / 2 - 100,
             font_size=32
         )
         self.mouseTexture = Image(
