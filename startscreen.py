@@ -20,10 +20,9 @@ class StartScreen(Widget):
         self.background = Image(
             width = Window.width,
             height = Window.height,
-            color=(.1, .1, .1, 1)
+            color=(255, 0, 0, 1)
         )
         self.startText = Label(
-            background_color=(.5, .5, .5, 1),
             text="Poodle Jump",
             width=300,
             height=75,
@@ -32,7 +31,6 @@ class StartScreen(Widget):
             font_size=50
         )
         self.startButton = Button(
-            background_color=(.5, .5, .5, 1),
             text="Start",
             width=300,
             height=75,
@@ -41,7 +39,7 @@ class StartScreen(Widget):
             font_size=32
         )
         self.settingsButton = Button(
-            background_color=(.5, .5, .5, 1),
+            color=(0, 0, 0),
             text="Settings",
             width=300,
             height=75,
