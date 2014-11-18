@@ -8,6 +8,7 @@ from kivy.clock import Clock
 from kivy.graphics import Rectangle, Ellipse, Line
 
 NOTEXTURE = "assets/NOTEXTURE.png"
+CURSOR = "assets/CURSOR.png"
 
 class StartScreen(Widget):
     def __init__(self):
@@ -53,7 +54,7 @@ class StartScreen(Widget):
             font_size=32
         )
         self.mouseTexture = Image(
-            source=NOTEXTURE,
+            source=CURSOR,
             texture_size=(20, 20),
             size=(20, 20)
         )
