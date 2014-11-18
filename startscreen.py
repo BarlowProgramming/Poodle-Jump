@@ -11,6 +11,7 @@ from kivy.graphics import Rectangle, Ellipse, Line
 NOTEXTURE = "assets/NOTEXTURE.png"
 CURSOR = "assets/CURSOR.png"
 
+
 class StartScreen(Widget):
     def __init__(self):
         super(StartScreen, self).__init__()
@@ -31,9 +32,15 @@ class StartScreen(Widget):
             font_size=50
         )
         self.startButton = Button(
+<<<<<<< HEAD
             text="Start",
             width=300,
             height=75,
+=======
+            text="Start Game",
+            width=Window.width / 2.6,
+            height=Window.height / 8,
+>>>>>>> jacob's-edits
             center_x=Window.width / 2,
             center_y=Window.height / 2,
             font_size=32
@@ -41,11 +48,21 @@ class StartScreen(Widget):
         self.settingsButton = Button(
             color=(0, 0, 0),
             text="Settings",
-            width=300,
-            height=75,
+            width=Window.width / 2.6,
+            height=Window.height / 8,
             center_x=Window.width / 2,
             center_y=Window.height / 2 - 100,
             font_size=32
+        )
+
+        #matt did this button all by himself 11/18/14 python experiences id put a hashtag but thats meant for comments
+        #dont tell me what to do jacob
+        self.optionsButton = Image(
+            source=NOTEXTURE,
+            texture_size=(40, 40),
+            size=(40, 40),
+            center_x=Window.width - 40,
+            center_y=Window.height - Window.height + 40
         )
         self.mouseTexture = Image(
             source=CURSOR,
@@ -57,21 +74,11 @@ class StartScreen(Widget):
         self.layout.add_widget(self.startText)
         self.layout.add_widget(self.startButton)
         self.layout.add_widget(self.settingsButton)
+        self.layout.add_widget(self.optionsButton)
         self.layout.add_widget(self.mouseTexture)
 
         Clock.schedule_interval(self.update, 1.0 / 60.0)
 
-    def on_touch_move(self, *args):
-        pass
-
     def update(self, *args):
-        self.mouseTexture.center_x = Window.mouse_pos[0]
-        self.mouseTexture.center_y = Window.mouse_pos[1]
-
-        # self.canvas.after.clear()
-        # self.startText.canvas.after.clear()
-        # with self.canvas.after:
-        #     Rectangle(pos=(Window.mouse_pos[0],
-        #                    Window.mouse_pos[1]),
-        #               size=(10,
-        #                     10))
+        self.mouseTexture.x = Window.mouse_pos[0]
+        self.mouseTexture.y = Window.mouse_pos[1] - self.mouseTexture.height
