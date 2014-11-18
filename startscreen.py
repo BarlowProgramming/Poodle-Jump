@@ -9,6 +9,7 @@ from kivy.graphics import Rectangle, Ellipse, Line
 
 NOTEXTURE = "assets/NOTEXTURE.png"
 
+
 class StartScreen(Widget):
     def __init__(self):
         super(StartScreen, self).__init__()
@@ -38,16 +39,16 @@ class StartScreen(Widget):
         )
         self.startButton = Button(
             text="Start Game",
-            width=300,
-            height=75,
+            width=Window.width / 2.6,
+            height=Window.height / 8,
             center_x=Window.width / 2,
             center_y=Window.height / 2 - 100,
             font_size=32
         )
         self.settingsButton = Button(
             text="Settings",
-            width=300,
-            height=75,
+            width=Window.width / 2.6,
+            height=Window.height / 8,
             center_x=Window.width / 2,
             center_y=Window.height / 2 - 200,
             font_size=32
@@ -67,17 +68,12 @@ class StartScreen(Widget):
 
         Clock.schedule_interval(self.update, 1.0 / 60.0)
 
-    def on_touch_move(self, *args):
-        pass
-
     def update(self, *args):
-        self.mouseTexture.center_x = Window.mouse_pos[0]
-        self.mouseTexture.center_y = Window.mouse_pos[1]
+        self.mouseTexture.x = Window.mouse_pos[0]
+        self.mouseTexture.y = Window.mouse_pos[1] - self.mouseTexture.height
 
-        # self.canvas.after.clear()
-        # self.startText.canvas.after.clear()
-        # with self.canvas.after:
-        #     Rectangle(pos=(Window.mouse_pos[0],
-        #                    Window.mouse_pos[1]),
-        #               size=(10,
-        #                     10))
+        with self.logo.canvas as canvas:
+            Line(points=[self.logo.x,
+                         self.logo.y,
+                         self.logo.x + self.logo.width,
+                         self.logo.])
