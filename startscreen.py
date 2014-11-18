@@ -53,6 +53,13 @@ class StartScreen(Widget):
             center_y=Window.height / 2 - 200,
             font_size=32
         )
+        self.optionsButton = Image(
+            source=NOTEXTURE,
+            texture_size=(40, 40),
+            size=(40, 40),
+            center_x=Window.width-40,
+            center_y=Window.height - Window.height + 40
+        )
         self.mouseTexture = Image(
             source=NOTEXTURE,
             texture_size=(20, 20),
@@ -64,6 +71,7 @@ class StartScreen(Widget):
         self.layout.add_widget(self.startText)
         self.layout.add_widget(self.startButton)
         self.layout.add_widget(self.settingsButton)
+        self.layout.add_widget(self.optionsButton)
         self.layout.add_widget(self.mouseTexture)
 
         Clock.schedule_interval(self.update, 1.0 / 60.0)
