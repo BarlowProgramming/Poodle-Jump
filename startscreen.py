@@ -52,6 +52,9 @@ class StartScreen(Widget):
             center_y=Window.height / 2 - 200,
             font_size=32
         )
+
+        #matt did this button all by himself 11/18/14 python experiences id put a hashtag but thats meant for comments
+        #dont tell me what to do jacob
         self.optionsButton = Image(
             source=NOTEXTURE,
             texture_size=(40, 40),
