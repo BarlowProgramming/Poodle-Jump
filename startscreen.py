@@ -57,7 +57,7 @@ class StartScreen(Widget):
             source=NOTEXTURE,
             texture_size=(40, 40),
             size=(40, 40),
-            center_x=Window.width-40,
+            center_x=Window.width - 40,
             center_y=Window.height - Window.height + 40
         )
         self.mouseTexture = Image(
@@ -79,9 +79,3 @@ class StartScreen(Widget):
     def update(self, *args):
         self.mouseTexture.x = Window.mouse_pos[0]
         self.mouseTexture.y = Window.mouse_pos[1] - self.mouseTexture.height
-
-        with self.logo.canvas as canvas:
-            Line(points=[self.logo.x,
-                         self.logo.y,
-                         self.logo.x + self.logo.width,
-                         self.logo.])
