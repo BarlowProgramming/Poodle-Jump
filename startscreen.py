@@ -2,6 +2,7 @@ from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.image import Image
+
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 from kivy.clock import Clock
@@ -17,19 +18,9 @@ class StartScreen(Widget):
         self.add_widget(self.layout)
         #Creating Widgets
         self.background = Image(
-            source=NOTEXTURE,
-            texture_size=Window.size,
-            size=Window.size,
-            allow_stretch=True,
-            keep_ratio=False,
-            x=0, y=0
-        )
-        self.logo = Image(
-            source=NOTEXTURE,
-            texture_size=(300, 300),
-            size=(300, 300),
-            center_x=Window.width / 2,
-            center_y=(Window.height / 2) + 150
+            width = Window.width,
+            height = Window.height,
+            color=(255, 0, 0, 1)
         )
         self.startText = Label(
             text="Poodle Jump 2014 Edition Platinum Edition #2014",
@@ -60,7 +51,6 @@ class StartScreen(Widget):
         )
         #Adding Widgets
         self.layout.add_widget(self.background)
-        self.layout.add_widget(self.logo)
         self.layout.add_widget(self.startText)
         self.layout.add_widget(self.startButton)
         self.layout.add_widget(self.settingsButton)
