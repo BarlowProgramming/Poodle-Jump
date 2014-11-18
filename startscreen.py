@@ -8,6 +8,9 @@ from kivy.core.window import Window
 from kivy.clock import Clock
 from kivy.graphics import Rectangle, Ellipse, Line
 
+
+#Commit for the hell of it
+
 NOTEXTURE = "assets/NOTEXTURE.png"
 CURSOR = "assets/CURSOR.png"
 
