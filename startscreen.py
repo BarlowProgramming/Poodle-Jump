@@ -2,12 +2,14 @@ from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.image import Image
+
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 from kivy.clock import Clock
 from kivy.graphics import Rectangle, Ellipse, Line
 
 NOTEXTURE = "assets/NOTEXTURE.png"
+CURSOR = "assets/CURSOR.png"
 
 class StartScreen(Widget):
     def __init__(self):
@@ -16,50 +18,44 @@ class StartScreen(Widget):
         self.add_widget(self.layout)
         #Creating Widgets
         self.background = Image(
-            source=NOTEXTURE,
-            texture_size=Window.size,
-            size=Window.size,
-            allow_stretch=True,
-            keep_ratio=False,
-            x=0, y=0
-        )
-        self.logo = Image(
-            source=NOTEXTURE,
-            texture_size=(300, 300),
-            size=(300, 300),
-            center_x=Window.width / 2,
-            center_y=(Window.height / 2) + 150
+            width = Window.width,
+            height = Window.height,
+            color=(.1, .1, .1, 1)
         )
         self.startText = Label(
-            text="Poodle Jump 2014 Edition Platinum Edition #2014",
+            background_color=(.5, .5, .5, 1),
+            text="Poodle Jump",
+            width=300,
+            height=75,
+            center_x=Window.width / 2,
+            center_y=Window.height / 2 + 100,
+            font_size=50
+        )
+        self.startButton = Button(
+            background_color=(.5, .5, .5, 1),
+            text="Start",
+            width=300,
+            height=75,
             center_x=Window.width / 2,
             center_y=Window.height / 2,
             font_size=32
         )
-        self.startButton = Button(
-            text="Start Game",
+        self.settingsButton = Button(
+            background_color=(.5, .5, .5, 1),
+            text="Settings",
             width=300,
             height=75,
             center_x=Window.width / 2,
             center_y=Window.height / 2 - 100,
             font_size=32
         )
-        self.settingsButton = Button(
-            text="Settings",
-            width=300,
-            height=75,
-            center_x=Window.width / 2,
-            center_y=Window.height / 2 - 200,
-            font_size=32
-        )
         self.mouseTexture = Image(
-            source=NOTEXTURE,
+            source=CURSOR,
             texture_size=(20, 20),
             size=(20, 20)
         )
         #Adding Widgets
         self.layout.add_widget(self.background)
-        self.layout.add_widget(self.logo)
         self.layout.add_widget(self.startText)
         self.layout.add_widget(self.startButton)
         self.layout.add_widget(self.settingsButton)
