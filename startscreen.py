@@ -53,7 +53,6 @@ class StartScreen(Widget):
             center_y=Window.height / 2 - 200,
             font_size=32
         )
-
         #matt did this button all by himself 11/18/14 python experiences id put a hashtag but thats meant for comments
         #dont tell me what to do jacob
         self.optionsButton = Image(
@@ -64,7 +63,7 @@ class StartScreen(Widget):
             center_y=Window.height - Window.height + 40
         )
         self.mouseTexture = Image(
-            source=NOTEXTURE,
+            source="assets/CURSOR.png",
             texture_size=(20, 20),
             size=(20, 20)
         )
@@ -80,5 +79,5 @@ class StartScreen(Widget):
         Clock.schedule_interval(self.update, 1.0 / 60.0)
 
     def update(self, *args):
-        self.mouseTexture.x = Window.mouse_pos[0]
-        self.mouseTexture.y = Window.mouse_pos[1] - self.mouseTexture.height
+        self.mouseTexture.center_x = Window.mouse_pos[0]
+        self.mouseTexture.center_y = Window.mouse_pos[1]
