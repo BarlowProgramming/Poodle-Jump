@@ -5,3 +5,5 @@
 *.spec
 .idea
 *.xcf
+.log
+.pyc

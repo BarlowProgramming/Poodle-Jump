@@ -45,8 +45,8 @@ class StartScreen(Widget):
             center_y=Window.height / 2 - 100,
             font_size=32
         )
-        self.settingsButton = Button(
-            text="Settings",
+        self.scoresButton = Button(
+            text="Scores",
             width=Window.width / 2.6,
             height=Window.height / 8,
             center_x=Window.width / 2,
@@ -61,10 +61,10 @@ class StartScreen(Widget):
             texture_size=(40, 40),
             size=(40, 40),
             center_x=Window.width - 40,
-            center_y=Window.height - Window.height + 40
+            center_y=40
         )
         self.mouseTexture = Image(
-            source=NOTEXTURE,
+            source="assets/CURSOR.png",
             texture_size=(20, 20),
             size=(20, 20)
         )
@@ -73,12 +73,12 @@ class StartScreen(Widget):
         self.layout.add_widget(self.logo)
         self.layout.add_widget(self.startText)
         self.layout.add_widget(self.startButton)
-        self.layout.add_widget(self.settingsButton)
+        self.layout.add_widget(self.scoresButton)
         self.layout.add_widget(self.optionsButton)
         self.layout.add_widget(self.mouseTexture)
 
         Clock.schedule_interval(self.update, 1.0 / 60.0)
 
     def update(self, *args):
-        self.mouseTexture.x = Window.mouse_pos[0]
-        self.mouseTexture.y = Window.mouse_pos[1] - self.mouseTexture.height
+        self.mouseTexture.center_x = Window.mouse_pos[0]
+        self.mouseTexture.center_y = Window.mouse_pos[1]
