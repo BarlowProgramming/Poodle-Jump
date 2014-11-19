@@ -21,8 +21,8 @@ class StartScreen(Widget):
         self.add_widget(self.layout)
         #Creating Widgets
         self.background = Image(
-            width = Window.width,
-            height = Window.height,
+            width=Window.width,
+            height=Window.height,
             color=(255, 0, 0, 1)
         )
         self.startText = Label(
